@@ -1,0 +1,51 @@
+﻿<Window x:Class="Stegano.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Stegano"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="230" Width="450">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Menu>
+            <MenuItem Header="Файл">
+                <MenuItem Header="Помощь"></MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="Выйти" Click="Close_Click"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <Grid Grid.Row="1" Margin="0,0,0,10">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            
+
+            <Label Grid.Row="0" Grid.Column="0" Content="Видимый файл" x:Name="label1"/>
+            <Label Grid.Row="2" Grid.Column="0" Content="Невидимый файл" x:Name="label2"/>
+            <Label Grid.Row="4" Grid.Column="0" Content="Итоговый файл" x:Name="label3"/>
+            <TextBox Text="C:\1.jpg" Margin="5,0,10,0" Grid.Row="1" Grid.Column="0" x:Name="LoadBox1"/>
+            <TextBox Text="C:\2.zip" Margin="5,0,10,0" Grid.Row="3" Grid.Column="0" x:Name="LoadBox2"/>
+            <TextBox Margin="5,0,10,0" Grid.Row="5" Grid.Column="0" x:Name="SaveBox3"/>
+            <Button Margin="0,0,10,0" Grid.Row="1" Grid.Column="1" x:Name="Load1Button" Content="Открыть" Click="Load1Button_Click"/>
+            <Button Margin="0,0,10,0" Grid.Row="3" Grid.Column="1" x:Name="Load2Button" Content="Открыть" Click="Load2Button_Click"/>
+            <Button Margin="0,0,10,0" Grid.Row="5" Grid.Column="1" x:Name="Load3Button" Content="Сохранить в" Click="Load3Button_Click"/>
+        </Grid>
+        <ToolBar Grid.Row="3" Height="19">
+            <TextBlock Text="Готов"></TextBlock>
+        </ToolBar>
+    </Grid>
+</Window>
